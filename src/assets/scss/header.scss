@@ -1,0 +1,337 @@
+/*---Подключение шрифтов--*/
+
+@import url('assets/css/dispatcher.min.css');
+
+
+/*-----------------------------Обнуляющие стили START-----------------------------*/
+
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+  }
+  
+  *, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+  }
+  
+  :focus, :active {
+	outline: none;
+  }
+  
+  a:focus, a:active {
+	outline: none;
+  }
+  
+  /* делает теги nav, footer, header. aside - блочными */
+  nav, footer, header, aside {
+	display: block;
+  }
+  
+  /* ниже параметры, которые уравнивают поведение шрифтов в этих тегах nav, footer, header. aside для разных браузеров, например, запрещают увеличение шрифтов на айфонах */
+  html, body {
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+  }
+  
+  /* здесь обращаемся к шрифтам в тегам form и просим наследовать их семейство шрифта, так как по умолчанию они его не наследуют  */
+  input, button, textarea {
+	font-family: inherit;
+  }
+  
+  /* здесь так же чистим стили в некоторых тегах, лишние отступы и т.д */
+  input::-ms-clear {
+	display: none;
+  }
+  
+  button {
+	cursor: pointer;
+  }
+  
+  button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+  }
+  
+  a, a:visited {
+	text-decoration: none;
+  }
+  
+  ul li {
+	list-style: none;
+  }
+  
+  img {
+	vertical-align: top;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+	font-size: inherit;
+	font-weight: 400;
+  }
+  
+/*-----------------------------Обнуляющие стили END-----------------------------*/
+
+
+/*---Адаптационный тег для изображений и фона START---*/
+
+.ibg {
+	padding: 0 0 100% 0;
+    overflow: hidden;
+    position: relative;
+
+ 	img {
+  		width: 100%;
+   		height: 100%;
+   		object-fit: cover;
+    	position: absolute;
+    	left: 0;
+    	top: 0;
+	}
+}
+
+// Размеры блока, в который заворачивается картинка и, к которому добавляется класс ibg, должны задаваться так:
+//	.block {
+//	width: 250px;
+//	height: 250px;
+//	}
+
+.bck {
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+}
+
+/*---Адаптационный тег для изображений и фона END---*/
+
+/*---Переменные START---*/
+
+$maxWidthHull: 1170px;
+$maxWidthContainer: 1720px;
+
+$screen-sm: 375px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1440px;
+
+$OnestLight: 'Onest Light' sans-serif;
+$OnestMedia: 'Onest Media' sans-serif;
+$OnestRegular: 'Onest Regular' sans-serif;
+$MonumentRegular: 'Monument Regular' sans-serif;
+
+$text-color: #b7b6b6;
+
+/*---Переменные END---*/
+
+
+body {
+	margin: 0px auto;
+	font-family: $OnestRegular;
+	color: $text-color;
+	font-size: 16px;
+	height: 100%;
+
+
+	p {
+		font-family: $OnestRegular;
+		color: $text-color;
+		font-size: 16px;
+	}
+
+	h1 {
+		font-family: $MonumentRegular;
+		font-size: 80px;
+		line-height: 126.5%;
+		letter-spacing: -0.025em;
+	}
+
+	h2 h3 {
+		letter-spacing: -0.025em;
+	}
+}
+
+
+.wrapper {
+	position: relative;
+   // max-width: 100%;
+    overflow: hidden;
+	min-height: 100%;
+	//display: flex;
+	// flex-direction: column;
+}
+
+.container {
+	max-width: 1760px;
+	margin: 0px auto;
+
+}
+
+.hull {
+ max-width: $maxWidthHull;
+}
+
+.shell {
+	max-width: $maxWidthContainer;
+}
+
+.header {
+	margin: 0px auto;
+	padding: 104px 0 76px 0;
+	z-index: 1;
+
+	@media (max-width: $screen-md) {
+		padding: 45px 0 40px 0;
+	}
+}
+
+.nav {
+
+
+}
+.nav__container {
+	max-width: 892px;
+	height: 41px;
+	margin: 0px auto;
+}
+
+.nav__menu {
+
+
+	ul {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	li {
+		font-family: $OnestRegular;
+		font-size: 21.2766px;
+		line-height: 128.5%;
+		color: $text-color
+	}
+
+	a {
+		color: $text-color
+	}
+
+	a:hover {
+		color: #cfcfcf;
+	}
+
+	@media (max-width: $screen-md) { 
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		max-width: 767px;
+		padding: 0 15px 0 0;
+		li {
+			&:nth-child(1),
+			&:nth-child(2),
+			&:nth-child(5),
+			&:nth-child(6) {
+				display: none;
+			}
+		}
+	}
+
+}
+
+.nav__burger-icon {
+	display: none;
+	
+	@media (max-width: $screen-md) {
+		display: block;
+	}
+	
+}
+
+.logo {
+		
+	@media (max-width: $screen-md) {
+		display: none;
+	}
+}
+
+.logo__mob {
+	display: none;
+	@media (max-width: $screen-md) {
+		display: block;
+		height: 24.65px;
+		padding: 0 0 0 10px;
+
+		img {
+			height: 24.65px;
+		}
+	}
+}
+
+.nav-mobile {
+	display: none; 
+	@media (max-width: $screen-md) {
+		position: absolute;
+		opacity: 0;
+		transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+		background: linear-gradient(173.55deg, #090909 16.32%, #22120D 78.47%);
+		width: 50%;
+		right: 0;
+		top: 0;
+		height: 100%;
+		transform: translateX(100%);
+		z-index: 2;
+		display: block;
+	}
+}
+
+.nav-mobile__item {
+	display: flex;
+	justify-content: center;
+}
+
+.nav-mobile__container {
+	display: flex;
+	width: 85px;
+	flex-direction: column;
+	align-items: center;
+	padding: 49px 0 0 0;
+}
+
+.nav-mobile__cross {
+	padding: 0 0 50px 0;
+	margin: 0 0 0 100%;
+}
+
+.nav-mobile__list {
+
+	li {
+		font-family: $OnestRegular;
+		font-weight: 400;
+		font-size: 19.3803px;
+		line-height: 25px;
+		text-align: right;
+		color: #b5b5b5;
+		padding: 0 0 50px 0;
+	}
+
+	a {
+		color: #b5b5b5;
+	}
+}
+
+.active {
+	display: none;
+	@media (max-width: $screen-md) {
+	transform: translateX(0);
+	opacity: 1;
+	transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+	display: block;
+	}
+}

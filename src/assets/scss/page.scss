@@ -1,0 +1,267 @@
+/*---Подключение шрифтов--*/
+
+@import url("assets/css/dispatcher.min.css");
+
+/*---Переменные START---*/
+
+$maxWidthContainer: 1170px;
+$maxWidthHull: 1720px;
+
+$screen-sm: 375px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1600px;
+
+$OnestLight: 'Onest Light' sans-serif;
+$OnestMedia: 'Onest Media' sans-serif;
+$OnestRegular: 'Onest Regular' sans-serif;
+$MonumentRegular: 'Monument Regular' sans-serif;
+
+$text-color: #b7b6b6;
+
+/*---Переменные END---*/
+
+.page-founders {
+	padding: 0 10px 0 10px;
+}
+.founders-background {
+	//height: 100%;
+	overflow: hidden;
+}
+.founders-background__svg {
+	width: 100%;
+	height: 100%;
+	background: url(../img/founders-background.svg);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.bio {
+	margin: 0px auto;
+	margin-bottom: 90px;
+
+	@media (max-width: $screen-md) {
+		margin-bottom: 17px;
+	}
+}
+.bio__container {
+}
+.bio__title {
+	padding: 0 0 50px 0;
+
+	h1 {
+		font-family: $MonumentRegular;
+		font-style: normal;
+		font-size: 44px;
+		font-weight: 700;
+		line-height: 120%;
+		background: linear-gradient(95.34deg, #F8F8F8 24.04%, rgba(239, 239, 239, 0.84) 82.81%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		background-clip: text;
+		text-shadow: 0px 4.06593px 20.3297px rgba(0, 0, 0, 0.35);
+		text-fill-color: transparent;
+		text-align: center;
+	}
+
+	@media (max-width: $screen-lg) {
+
+		h1 {
+			font-size: 34px;
+		}
+	}
+	@media (max-width: $screen-md) {
+		padding: 0 0 32px 0;
+		h1 {
+			font-size: 28px;
+		}
+	}
+}
+
+
+.bio__profile {
+
+}
+
+.bio__profile-container {
+	max-width: 842px;
+	//max-height: 345px;
+	display: flex;
+	justify-content: space-between;
+	margin: 0px auto;
+
+	@media (max-width: $screen-md) {
+		flex-direction: column;
+	}
+
+}
+
+.bio__profile-foto {
+	border: 1px solid transparent;
+	border-image: linear-gradient(to bottom left, white, transparent 50%, white) 1;
+	border-radius: 0.01px;
+	border-color: #00000000;
+
+	width: 318px;
+	height: 345px;
+	margin: 0 5px 0 0;
+    overflow: hidden;
+
+
+	img {
+		width: 100%;
+		height: 100%;
+   		object-fit: cover;
+		padding: 15px;
+	}
+
+	@media (max-width: $screen-md) {
+		margin: 0px auto;
+		margin-bottom: 40px;
+	}
+}
+
+.bio__profile-information {
+	max-width: 468px;
+	padding: 0 0 5px 0;
+
+	h3 {
+		font-family: $OnestRegular;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 28px;
+		line-height: 128%;
+		color: #FFFFFF;
+		padding: 0 0 18px 0;
+
+	}
+
+	p {
+		font-family: $OnestRegular;
+		font-style: normal;
+		font-weight: 300;
+		font-size: 14px;
+		line-height: 150%;
+		color: #FFFFFF;
+		padding: 0 0 18px 0;
+	}
+}
+
+
+.filmography {
+	margin: 0 0 74px 0;
+
+	@media (max-width: $screen-md) {
+		margin: 0 0 50px 0;
+	}
+}
+
+.filmography__container {
+}
+
+.filmography__title {
+	padding: 0 0 50px 0;
+
+	h2 {
+		font-family: $MonumentRegular;
+		font-style: normal;
+		font-size: 44px;
+		font-weight: 700;
+		line-height: 120%;
+		text-transform: uppercase;
+		background: linear-gradient(95.34deg, #F8F8F8 24.04%, rgba(239, 239, 239, 0.84) 82.81%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		background-clip: text;
+		text-shadow: 0px 4.06593px 20.3297px rgba(0, 0, 0, 0.35);
+		text-fill-color: transparent;
+		text-align: center;
+	}
+
+	@media (max-width: $screen-lg) {
+		h2 {
+			font-size: 34px;
+		}
+	}
+
+	@media (max-width: $screen-md) {
+		padding: 0 0 20px 0;
+		
+		h2 {
+			font-size: 34px;
+			line-height: 98%;
+			text-align: start;
+		}
+	}
+}
+
+.filmography__movies {
+}
+
+.filmography__movies-conteiner {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.filmography__item {
+	max-width: 573px;
+	max-height: 333px;
+	position: relative;
+}
+
+.image-overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(181.77deg, rgba(0, 0, 0, 0) 30.48%, rgba(0, 0, 0, 0.5) 87.15%);
+	z-index: 1;
+}
+
+.filmography__item-image {
+	max-width: 573px;
+	height: 333px;
+	overflow: hidden;
+	
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	@media (max-width: $screen-md) {
+		height: 199px;
+	}
+}
+
+.filmography__item-title {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+	padding: 0 14px 14px 14px;
+
+	time {
+		font-family: $OnestRegular;
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 100%;
+		color: #b5b5b5;
+	}
+
+	p {
+		font-family: $OnestRegular;
+		font-weight: 500;
+		font-size: 24px;
+		line-height: 100%;
+		color: #FFFFFF;
+		padding: 10px 0 0 0;
+	}
+}
